@@ -37,6 +37,18 @@ function App() {
       </div>
 
       <div className='jobs-center'>
+        <div className='btn-container'>
+          {
+            jobs.map((item, key) => {
+              return (
+                <button key={item.id} onClick={() => setValue(key)} className={`job-btn ${key === value ? 'active-btn' : null}`}>
+                  {item.company}
+                </button>
+              )
+            })
+          }
+        </div>
+
         <article className='job-info'>
           <h3>{title}</h3>
           <h4>{company}</h4>
